@@ -7,6 +7,10 @@ module.exports = {
     output: {
         filename: 'index.[contenthash].js'
     },
+    devtool: 'inline-source-map',
+    devServer: {
+        contentBase: './dist',
+    },
     plugins: [
         new HtmlWebpackPlugin({
             title: "XDML - 写代码啦",
