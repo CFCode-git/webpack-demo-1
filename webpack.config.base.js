@@ -18,6 +18,12 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                    'file-loader',
+                ],
+            },
+            {
                 test: /\.styl$/,
                 loader: ['style-loader', 'css-loader', 'stylus-loader'] // 将 stylus => CSS代码 => CSS的js字符串 => style标签
             },
