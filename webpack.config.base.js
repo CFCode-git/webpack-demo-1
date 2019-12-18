@@ -15,6 +15,31 @@ module.exports = {
             template: "src/assets/template.html"
         })
     ],
+    module: {
+        rules: [
+            {
+                test: /\.styl$/,
+                loader: ['style-loader', 'css-loader', 'stylus-loader'] // 将 stylus => CSS代码 => CSS的js字符串 => style标签
+            },
+            {
+                test: /\.less$/,
+                loader: ['style-loader', 'css-loader', 'less-loader'] // 将 Less => CSS代码 => CSS的js字符串 => style标签
+            },
+            {
+                test: /\.scss$/i,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            implementation: require('dart-sass'),
+                        },
+                    },
+                ],
+            },
+        ],
+    },
 };
 
 
